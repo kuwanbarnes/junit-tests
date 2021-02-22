@@ -1,42 +1,64 @@
 import java.util.ArrayList;
 
 public class Student {
-    public static String name;
 
-    public static long id;
 
-    public static ArrayList<Integer> grades;
+    private  String name;
+    private long id;
+    private ArrayList<Integer> grades;
 
-    public static String getname() {
+    public Student(long id, String name) {
+        this.id = id;
+        this.name = name;
+        this.grades = new ArrayList<>();
+    }
+    public  String getName() {
         return name;
     }
-
-    public static long getId() {
+public ArrayList<Integer> getGrades() {
+        
+        return grades;
+}
+    public long getId() {
         return id;
     }
 
-    public static int addgrades(int grade) {
-        ArrayList<Integer>grades =new ArrayList<>();
-            grades.add(grade);
-        return grade;
+    public void addGrade(int grade) {
+        this.grades.add(grade);
+    }
+
+
+//    public void  {
 
     }
 
-//    public StudentTest(long id, String name) {
-//        this.id = id;
-//        this.name = name;
-//    }
 
-
-    public ArrayList<Integer> StudentTest() {
-        return grades;
-    }
-//    public long getId() {
-//        return id;
-//    }
-//    public String getName() {
+//
+//    public static String getname() {
 //        return name;
 //    }
+//
+//    public static long getId() {
+//        return id;
+//    }
+//
+//    public static int addgrades(int grade) {
+//        ArrayList<Integer>grades =new ArrayList<>();
+//            grades.add(grade);
+//        return grade;
+//
+//    }
+//
+//    public void StudentTest(long id, String name) {
+//        Student.id = id;
+//        Student.name = name;
+//    }
+//
+//
+//    public ArrayList<Integer> StudentTest() {
+//        return grades;
+//    }
+//
 //    public ArrayList<Integer> getGrades(){
 //        return grades;}
 //    public double getGradeAverage() {
@@ -47,5 +69,5 @@ public class Student {
 //        double average = total / grades.size();
 //        return average;
 //    }
-}
-
+//}
+//

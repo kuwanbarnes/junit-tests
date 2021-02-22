@@ -3,19 +3,31 @@ import static org.junit.Assert.*;
 
 
 public class StudentTest {
+    //creates classes
     @Test
-    public void getName(){
-
-       assertEquals("jash",Student.getname());
+    public void testIfStudentObjectCanBeCreated(){
+        Student fer =new Student(1L, "fer");
+        Student david=null;
+assertNotNull(fer);
+        assertNull(david);
     }
 
     @Test
-    public void getId(){
+    public void testIfFieldsWork(){
+Student fer =new Student(1L,"fer");
+assertEquals(1L,fer.getId());
+assertEquals("fer",fer.getName());
+assertNotNull(fer.getGrades());
 
-        assertEquals(Student.getId(),0);
+
     }
     @Test
-    public void addgrade(){
-        assertEquals(90,Student.addgrades(90));
+    public void testIfAddGradeWorks(){
+        Student fer =new Student(1l,"fer");
+        fer.addGrade(90);
+        fer.addGrade(100);
+        assertEquals(90,(int) fer.getGrades().get(0));
+        assertEquals(100,(int)fer.getGrades().get(1));
+
     }
 }
