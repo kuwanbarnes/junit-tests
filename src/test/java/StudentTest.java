@@ -1,12 +1,17 @@
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 
 public class StudentTest {
+    Student fer;
     //creates classes
+    @Before
+    public void setup(){
+        fer =new Student(1l,"fer");
+    }
     @Test
     public void testIfStudentObjectCanBeCreated(){
-        Student fer =new Student(1L, "fer");
         Student david=null;
 assertNotNull(fer);
         assertNull(david);
@@ -14,7 +19,6 @@ assertNotNull(fer);
 
     @Test
     public void testIfFieldsWork(){
-Student fer =new Student(1L,"fer");
 assertEquals(1L,fer.getId());
 assertEquals("fer",fer.getName());
 assertNotNull(fer.getGrades());
@@ -23,7 +27,6 @@ assertNotNull(fer.getGrades());
     }
     @Test
     public void testIfAddGradeWorks(){
-        Student fer =new Student(1l,"fer");
         assertEquals(0,fer.getGrades().size());
         fer.addGrade(90);
         assertEquals(1,fer.getGrades().size());
@@ -35,7 +38,6 @@ assertNotNull(fer.getGrades());
     }
     @Test
     public void testIfGradeAverageworks(){
-        Student fer =new Student(1l,"fer");
         fer.addGrade(80);
         fer.addGrade(100);
         assertEquals(90, fer.getGradeAverage(),0);
