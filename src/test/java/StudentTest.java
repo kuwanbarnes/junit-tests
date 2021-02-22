@@ -1,34 +1,21 @@
-import java.util.ArrayList;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 
 public class StudentTest {
-    long id;
-    String name;
-    ArrayList<Integer> grades;
+    @Test
+    public void getName(){
 
-
-    public StudentTest(long id, String name) {
-        this.id = id;
-        this.name = name;
+       assertEquals("jash",Student.getname());
     }
 
+    @Test
+    public void getId(){
 
-    public StudentTest(ArrayList<Integer> grades) {
-        this.grades = grades;
+        assertEquals(Student.getId(),0);
     }
-    public long getId() {
-        return id;
-    }
-    public String getName() {
-        return name;
-    }
-    public ArrayList<Integer> getGrades(){
-        return grades;}
-    public double getGradeAverage() {
-        double total = 0;
-        for (int i = 0; i < grades.size(); i++) {
-            total = total + grades.get(i);
-        }
-        double average = total / grades.size();
-        return average;
+    @Test
+    public void addgrade(){
+        assertEquals(90,Student.addgrades(90));
     }
 }
