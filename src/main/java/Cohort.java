@@ -9,6 +9,8 @@ public class Cohort {
         this.students = new ArrayList<>();
     }
 
+
+
     public double getCohortAverage() {
         double avg = 0;
         for (Student student: this.getStudents()) {
