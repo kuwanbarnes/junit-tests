@@ -7,15 +7,11 @@ import static org.junit.Assert.*;
 
 public class CohortTest {
     Cohort kuwan;
+    Student ku;
     //creates classes
     @Before
     public void setup(){
         kuwan =new Cohort();
-    }
-    Student ku;
-    //creates classes
-    @Before
-    public void setup1(){
         ku =new Student(1l,"kuwan");
     }
     @Test
