@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -5,11 +6,20 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class CohortTest {
-
+    Cohort kuwan;
+    //creates classes
+    @Before
+    public void setup(){
+        kuwan =new Cohort();
+    }
+    Student ku;
+    //creates classes
+    @Before
+    public void setup1(){
+        ku =new Student(1l,"kuwan");
+    }
     @Test
     public void testAddStudent(){
-Cohort kuwan = new Cohort();
-Student ku = new Student(1,"kuwan");
 kuwan.addStudent(ku);
 ku.addGrade(90);
 assertEquals("kuwan",ku.getName() );
@@ -17,19 +27,16 @@ assertEquals("kuwan",ku.getName() );
 
 @Test
     public void testToGetList(){
-        Cohort list = new Cohort();
-        list.getStudents();
-        assertNotNull(list);
+        kuwan.getStudents();
+        assertNotNull(kuwan);
 }
 @Test
     public void getTheAverage(){
-        Cohort average = new Cohort();
-    Student ku = new Student(1,"kuwan");
-    average.addStudent(ku);
+    kuwan.addStudent(ku);
     ku.addGrade(90);
     ku.addGrade(80);
-        average.getCohortAverage();
-        assertEquals(85,average.getCohortAverage(),0);
+        kuwan.getCohortAverage();
+        assertEquals(85,kuwan.getCohortAverage(),0);
 }
     }
 
